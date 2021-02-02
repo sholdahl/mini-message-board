@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="container">
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div class="messages-container">
+      <a href="./new">Add Message</a>
+
+      <% for (let i = 0; i < messages.length; i++) { %>
+      <% let message = messages[i] %>
+
+      <% let months = ['January','February','March','April','May','June','July','August','September','October','November','December']%>
+      <% let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'] %>
+      <% let dayName = days[message.added.getDay()] %>
+      <% let monthName = months[message.added.getMonth()] %>
+      <% let year = message.added.getFullYear() // 2019 %>
+      <% let date = message.added.getDate() %>
+
+      <div class="message-wrapper">
+        <div class="message-author">
+          <%=message.user%>
+        </div>
+        <div class="message-content">
+          <%=message.text%>
+        </div>
+        <div class="message-date">
+          <%=dayName%> <%=monthName%> <%=year%>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
