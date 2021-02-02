@@ -7,7 +7,7 @@
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart"
   },
-  "engines": { "node": "10.x.y" },
+  "engines": { "node": "14.15.3" },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
